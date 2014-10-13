@@ -2,8 +2,8 @@ package com.geowarin
 
 import akka.actor.Actor
 import com.geowarin.model.User
-import com.geowarin.model.UserJsonProtocol._
 import spray.http.MediaTypes._
+import com.geowarin.model.UserJsonProtocol._
 import spray.json._
 import spray.routing._
 
@@ -38,10 +38,13 @@ trait MyService extends HttpService {
           }
         }
       }
-    } ~ path("kikoo") {
+    } ~ path("users") {
       get {
         complete {
-          User("Jo").toJson.toString()
+          List(
+            User("Jo"),
+            User("John")
+          ).toJson.toString()
         }
       }
     }
