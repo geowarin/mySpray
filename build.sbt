@@ -1,4 +1,4 @@
-organization  := "com.example"
+organization  := "com.geowarin"
 
 version       := "0.1"
 

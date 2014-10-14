@@ -1,16 +1,11 @@
 package com.geowarin
 
 import com.geowarin.DB.Users
-import com.geowarin.models.User
 import spray.routing.SimpleRoutingApp
 import sprest.routing.RestRoutes
 
 trait Routes extends RestRoutes { this: SimpleRoutingApp =>
-  import spray.routing.Directives._
-  import spray.json.DefaultJsonProtocol._
-  import spray.httpx.SprayJsonSupport._
   import spray.httpx.encoding.Gzip
-  import spray.json._
 
   def js = pathPrefix("js" / Rest) { fileName =>
     get {
